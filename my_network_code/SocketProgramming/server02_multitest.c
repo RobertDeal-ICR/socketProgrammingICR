@@ -67,7 +67,10 @@ int main(int argc, char *argv[]) {
 			bzero(buffer, 256);
 			n = read(newsockfd, buffer, 256);
 			if(n < 0){ error("ERROR - Reading data failed"); }
-			printf("Client: %s", buffer);
+			printf(" ");
+			printf("%c[2K", 27);
+			printf("Client: %s\n", buffer);
+			printf("User: ");
 			bzero(buffer, 256);	
 		}
 	}

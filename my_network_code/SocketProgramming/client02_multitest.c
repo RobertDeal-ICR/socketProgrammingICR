@@ -57,7 +57,10 @@ int main(int argc, char *argv[]) {
 			bzero(buffer, 256);
 			n = read(sockfd, buffer, 256);
 			if(n < 0){ error("ERROR - Reading data failed"); }
-			printf("Server: %s", buffer);
+			printf(" ");
+			printf("%c[2K", 27);
+			printf("Server: %s\n", buffer);
+			printf("User: ");
 			bzero(buffer, 256);	
 		}		
 	}
