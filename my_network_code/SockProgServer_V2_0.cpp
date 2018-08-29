@@ -28,7 +28,7 @@ int main() {
 
 	return 0;
 
-	/*
+	/
 	//notes, ill just leave them here for now
 
 	// maximum number of possible connections
