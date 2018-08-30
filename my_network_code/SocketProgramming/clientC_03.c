@@ -13,7 +13,7 @@
 #include <pthread.h>
 #include <arpa/inet.h>
 #include <sys/wait.h>
-#include <netdb.h>wad
+#include <netdb.h>
 
 void error(const char *msg) {
 	perror(msg);
@@ -55,12 +55,11 @@ int main(int argc, char *argv[]) {
 	if(forknum != 0){ // parent
 		while(1){
 			bzero(buffer, 256);
+
 			n = read(sockfd, buffer, 256);
 			if(n < 0){ error("ERROR - Reading data failed"); }
-			printf(" ");
-			printf("%c[2K", 27);
-			printf("Server: %s\n", buffer);
-			printf("User: ");
+
+			printf("Server: %s", buffer);
 			bzero(buffer, 256);	
 		}		
 	}
